@@ -10,13 +10,13 @@ mode(7)
 //
 //##########################################################
 L = list();
-//            theta    d      a      alpha
-L(1) = Link([ 0       0      0.15   -%pi/2   0]);
-L(2) = Link([ 0       0      0.57   -%pi     0]);
-L(3) = Link([ 0       0      0.155  -%pi/2   0]);
-L(4) = Link([ 0      -0.635  0       %pi/2   0]);
-L(5) = Link([ 0       0      0      -%pi/2   0]);
-L(6) = Link([ 0      -0.095  0       %pi     0]);
+//            theta    d      a      alpha  rotational/prismatic DH/mDH
+L(1) = Link([ 0       0      0.15   -%pi/2   0 1 ]);
+L(2) = Link([ 0       0      0.57   -%pi     0 1 ]);
+L(3) = Link([ 0       0      0.155  -%pi/2   0 1 ]);
+L(4) = Link([ 0      -0.635  0       %pi/2   0 1 ]);
+L(5) = Link([ 0       0      0      -%pi/2   0 1 ]);
+L(6) = Link([ 0      -0.095  0       %pi     0 1 ]);
 
 qz = [0 0 0 0 0 0]; // zero angles, L shaped pose
 //Pose 0; At ZERO position
