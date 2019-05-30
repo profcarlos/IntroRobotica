@@ -75,7 +75,7 @@ for axis = 1:6
     // Registra em ang o valor do ângulo de deslocamento de menor distância euclidiana
     mprintf("axis: %i sample: %i dist_eucl: %f matriz:\n", axis, dist_index, dist_eucl)
     T(:,:,dist_index)
-    q_ang(axis)=t(1,dist_index)
+    q_ang(axis)=q(dist_index, axis)
     if(dist_eucl < 0.005) then
         mprintf("Parada por distância euclidiana pequena ( < 0.005)")
         return;
