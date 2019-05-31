@@ -26,14 +26,19 @@ fkine(p560, q_end)
 
 // Veja que o resultado de %pi/4 no ângulo theta_1 coloca o manipulador no ponto p
 
-fkine(p560, [%pi/4,0,0,0,0,0])
+T_p = fkine(p560, [%pi/4,0,0,0,0,0])
+
+//Salva valores nas variáveis 
+r_11 = T(1,1); r_12 = T(1,2); r_13 = T(1,3); p_x = T(1,4);
+r_21 = T(2,1); r_22 = T(2,2); r_23 = T(2,3); p_y = T(2,4);
+r_31 = T(3,1); r_32 = T(3,2); r_33 = T(3,3); p_z = T(3,4);
+ 
+// Considerando determinado ponto para ser posicionado
+p = [0.42, 0.22, 0.43]
 
 // Gera um vetor de posições intermediárias
 t = [0:.05:2];
 [a,samples] = size(t)
-
-// Considerando determinado ponto para ser posicionado
-p = [0.42, 0.22, 0.43]
 
 // Armazena em ang o valor dos ângulos mais próximos do ponto p
 q_ang = [0,0,0,0,0,0]
