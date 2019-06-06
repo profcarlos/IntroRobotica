@@ -32,7 +32,13 @@ T_p = fkine(p560, [%pi/4,0,0,0,0,0])
 r_11 = T(1,1); r_12 = T(1,2); r_13 = T(1,3); p_x = T(1,4);
 r_21 = T(2,1); r_22 = T(2,2); r_23 = T(2,3); p_y = T(2,4);
 r_31 = T(3,1); r_32 = T(3,2); r_33 = T(3,3); p_z = T(3,4);
- 
+
+// Usando as equações da Cinemática Inversa do livro Craig (2006) disponível em:
+// http://files.yuki-phantomhive.webnode.mx/200000031-25e8a26e29/Robotica.pdf
+theta1a = atan(p_y, p_x) - atan(L(3).d, sqrt(p_x^2 + p_y^2-L(3).d^2))
+theta1b = atan(p_y, p_x) - atan(L(3).d, sqrt(p_x^2 + p_y^2-L(3).d^2)) 
+
+
 // Considerando determinado ponto para ser posicionado
 p = [0.42, 0.22, 0.43]
 
