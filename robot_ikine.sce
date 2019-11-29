@@ -36,26 +36,20 @@ p_y = T(2,4)
 p_z = T(3,4)
 
 // Equações da Cinemática Inversa do Manipulador
+// Insira aqui suas equações
 c_2 = (L_1^2 + (L_2 + L_3)^2 - p_x^2 - p_y^2)/(L_1^2 + (L_2 + L_3)^2)
 tetha_2a = atan(+sqrt(1-c_2^2), c_2)
 tetha_2b = atan(-sqrt(1-c_2^2), c_2)
-tetha_1 = 0
+tetha_1a = 0
+tetha_1b = %pi/4
 tetha_3a = 0
 tetha_3b = 0
 
-// Crie variaveis para sinalizar se o ângulo faz parte da área de trabalho
-flag_tetha_2a = 0
-flag_tetha_2b = 0
-// Verificação dos limiares da área de trabalho do manipulador
-if(tetha_2a > 0 & tetha_2a < %pi)then
-    flag_tetha_2a = 1
-end
-if(tetha_2b > 0 & tetha_2b < %pi)then
-    flag_tetha_2b = 1
-end
-
-pos = [tetha1_a, tetha_2a, tetha_3a]
 // Apresenta o modelo do manipulador dada a posição angular dos links
-plot_robot(bot,pos);
-//
+pos = [tetha_1a, tetha_2a, tetha_3a, 0]
+plot_robot(bot,pos)
+
+// Caso tenha mais de uma posição vamos plotar para ver qual a que representa a posição desejada
+pos = [tetha_1b, tetha_2a, tetha_3a, 0]
+plot_robot(bot,pos)
 mode(m);
