@@ -1,5 +1,5 @@
 m = mode();
-mode(7)
+//mode(7)
 //
 // Forward kinematics is the problem of solving the Cartesian position and 
 // orientation of a mechanism given knowledge of the kinematic structure and 
@@ -18,11 +18,12 @@ L(4) = Link([ 0      -0.635  0       %pi/2   0 1 ]);
 L(5) = Link([ 0       0      0      -%pi/2   0 1 ]);
 L(6) = Link([ 0      -0.095  0       %pi     0 1 ]);
 
-qz = [0 0 0 0 0 0]; // zero angles, L shaped pose
-//Pose 0; At ZERO position
-qready = [-%pi/4 %pi/8 -%pi/8 0 -%pi/4 0];
-// ready pose, arm up
-q0 =[0   -%pi/2   0   0   -%pi/2   0];
+// zero angles, initial angles
+qz = [0 0 0 0 0 0]; 
+
+// final position, objetive position
+qready = [-%pi/2 -%pi/4 -%pi/8 -%pi %pi 0];
+
 mHP6=SerialLink(L, 'name', 'Motoman HP6');
 //##########################################################
 
