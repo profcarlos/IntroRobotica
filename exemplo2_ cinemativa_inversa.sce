@@ -60,6 +60,9 @@ d2_n = sin(theta1_n)*p_x - cos(theta1_n)*p_y-sin(theta1_n)*L1 - L3 - L2
 //Calculo de theta3
 b_p = cos(theta1_p)*r_11+sin(theta1_p)*r_21
 b_n = cos(theta1_n)*r_11+sin(theta1_n)*r_21
+// Os valores de r_11 e r_21 deverias ser da posição anterior
+// Como estamos calculando os ângulos a partir da posição atual
+// pode ser por isso que  o resultado de theta3 ficou diferente
 theta3_p1 = atan(b_p, sqrt(1-b_p*b_p))
 theta3_n1 = atan(b_p, -sqrt(1-b_p*b_p))
 
@@ -69,10 +72,10 @@ theta3_n2 = atan(b_n, -sqrt(1-b_n*b_n))
 // Obtem uma posição de teste
 q_test1 = [L1, theta1_p,d2_p, theta3_p2, 0]
 // Apresenta o modelo do manipulador dada a posição angular dos links
-plot_robot(bot,q_test);
+plot_robot(bot,q_test1);
 
 // Obtem outra posição de teste
-q_test 2= [L1, theta1_n,d2_n, theta3_n1, 0]
+q_test2= [L1, theta1_n,d2_n, theta3_n1, 0]
 // Apresenta o modelo do manipulador dada a posição angular dos links
-plot_robot(bot,q_test);
+plot_robot(bot,q_test2);
 mode(m);
